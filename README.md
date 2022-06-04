@@ -6,7 +6,7 @@ Below represents the project architecture to be set up
 
 ![project_architecture](./img/1.udagram_architecture.jpeg)
 
-The code in this repository was structured to create all resources required in this project and to foster better code readability. Infrastructures were created in two batches popularly known as STACKS. This includes the:
+The code in this repository was structured to create all resources required in this project and to foster better code readability. Infrastructures were created in two batches popularly known as STACKS. These includes the:
 1. Network Stack
 2. Server Stack
 
@@ -33,7 +33,7 @@ The Server stack consists of:
 ![server_stack_resources](./img/4.created_server_stack_resources.png)
 
 ## Looking Closely Into The Created Resources
-<b>S3 BUCKET</b>: The global S3 bucket was created and it contain the application file which gets uploaded by the administrator then as defined in the autocreation template gets downloaded into the instances 
+<b>S3 BUCKET</b>: The global S3 bucket was created and it contain the application file which gets uploaded by the administrator as defined in the autocreation template and gets downloaded into the instances 
 ![s3_bucket](./img/6.created_bucket_and_object.png)
 ![template](./img/6a.template.jpg)
 
@@ -53,7 +53,7 @@ The Server stack consists of:
 - The VPC serves as the virtual network for our application
 ![vpc](./img/11.vpc.jpg)
 
-- The Public subnets contains a public ipv4 address and it houses the NAT Gateway,Loadbalancers and the bastion host. Its public facing is useful for coneection with the internet via the internet gateway. The Private Subnets is were our EC2 instances are created and it provides an isolation to the instances for security purposes.
+- The Public subnets contains a public ipv4 address and it houses the NAT Gateway,Loadbalancers and the bastion host. Its public facing is useful for coneection with the internet via the internet gateway. The Private Subnets are were our EC2 instances are created and it provides an isolation to the instances for security purposes.
 ![public_private_subnets](./img/12.public_and_private_subnets.jpg)
 
 - Internet Gateway serves as the pathway for access to the internet
@@ -63,7 +63,7 @@ The Server stack consists of:
 ![public_private_route_tables](./img/14.Private_public_route_tables.jpg)
 
 ## Administrator Access Via JumpBoxServer (Bastion Host)
-From the project architecture, we see that our instances are located in the private subnets which ensures that the EC2 instances are inaccessible by anyone in the outside world. For the admininstrator to gain access to this servers for maintenance and admininstrative purposes, it is vital that a dedicated server is created to access these instances by the administrator.
+From the project architecture, we see that our instances are located in the private subnets which ensures that the EC2 instances are inaccessible by anyone in the outside world. For the administrator to gain access to these servers for maintenance and admininstrative purposes, it is vital that a dedicated server is created to access these instances by the administrator.
 
 The jumpbox server connects to the instances via local ipv4 address as they exist within the same virtual network and so no public internet network connection is required.
 
@@ -82,5 +82,5 @@ The jumpbox server connects to the instances via local ipv4 address as they exis
 ![proof](./img/19.proof_of_connection.jpg)
 
 ## AWS CloudWatch For Resource Monitoring
-A cloudwatch resource was created to help monitor the performances of resources present in our network
+A cloudwatch resource was created to help monitor the performances of resources present on our network
 ![cloud_watch](./img/20.cloudwatch_config.jpg)
